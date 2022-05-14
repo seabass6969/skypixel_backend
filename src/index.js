@@ -98,7 +98,7 @@ app.get('/api/profilelist/:id', async (req,res)=>{
     const url = 'https://api.hypixel.net/player?key=' + KEY + "&uuid=" + finaluuid 
   const response = await axios.get(url);
   const notdone = response.data;
-    const results = JSON.stringify(objectToArray(notdone["player"]["stats"]["SkyBlock"]["profiles"]))
+    const results = JSON.stringify(notdone["player"]["stats"]["SkyBlock"]["profiles"])
   res.send(results);
     }catch(err) {
         res.send(`{"error": true}`);
